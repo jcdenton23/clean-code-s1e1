@@ -9,7 +9,7 @@
 // Event handling, user interaction is what starts the code execution.
 
 var taskInput=document.getElementById("new-task");//Add a new task.
-var addButton=document.getElementsByTagName("button")[0];//first button
+var addButton=document.querySelector(".btn")//first button
 var incompleteTaskHolder=document.getElementById("todo");//ul of #incompleteTasks
 var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
 
@@ -18,9 +18,12 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 var createNewTaskElement=function(taskString){
 
     var listItem=document.createElement("li");
+    listItem.classList.add('todo-item');
 
     //input (checkbox)
     var checkBox=document.createElement("input");//checkbx
+    checkBox.classList.add('input');
+    checkBox.classList.add('input-checkbox');
     //label
     var label=document.createElement("label");//label
     //input (text)
@@ -30,21 +33,28 @@ var createNewTaskElement=function(taskString){
 
     //button.delete
     var deleteButton=document.createElement("button");//delete button
+
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task';
+    label.classList.add('label');
+    label.classList.add('task');
 
     //Each elements, needs appending
     checkBox.type="checkbox";
     editInput.type="text";
-    editInput.className="task";
+    editInput.classList.add('input');
+    editInput.classList.add('input-text');
+    editInput.classList.add('task');
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+    editButton.classList.add('btn');
+    editButton.classList.add('edit');
 
-    deleteButton.className="delete";
+    deleteButton.classList.add('btn');
+    deleteButton.classList.add('delete');
     deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.classList.add('img');
     deleteButton.appendChild(deleteButtonImg);
 
 
