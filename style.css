@@ -1,3 +1,9 @@
+/* Reset styles */
+input,
+button {
+  outline: none;
+}
+
 /* Basic Style */
 .app {
   background-color: #f8f8f8;
@@ -12,11 +18,11 @@
   text-align: right;
 }
 
-.header .header-img {
+.header .header__img {
   width: 100%;
 }
 
-.header .header-link {
+.header .header__link {
   font-family: fantasy, cursive;
 }
 
@@ -39,7 +45,7 @@
   flex-grow: 1;
 }
 
-.new-task-wrapp {
+.new-task {
   display: flex;
 }
 
@@ -49,13 +55,8 @@
 }
 
 .todo-item,
-.title {
+.section__title {
   list-style: none;
-}
-
-.input,
-.btn {
-  outline: none;
 }
 
 .btn {
@@ -73,7 +74,7 @@
 }
 
 /* Heading */
-.title,
+.section__title,
 .new-task-label {
   color: #333;
   font-weight: 700;
@@ -84,7 +85,8 @@
   text-transform: uppercase;
 }
 
-.input-text {
+.new-task__input,
+.todo-item__text {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -97,7 +99,8 @@
   color: #888;
 }
 
-.input-text:focus {
+.new-task__input:focus,
+.todo-item__text:focus {
   color: #333;
 }
 
@@ -107,7 +110,7 @@
   margin: 0 0 20px;
 }
 
-.input#new-task {
+.new-task__input {
   width: 318px;
 }
 
@@ -126,47 +129,51 @@
   vertical-align: middle;
 }
 
-.todo-item > .input-checkbox {
+.todo-item > .todo-item__checkbox {
   margin: 0 10px;
 }
 
-.todo-item > .label {
+.todo-item > .todo-item__label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-.todo-item > .input-text {
+.todo-item > .todo-item__text {
   width: 226px;
 }
 
-.btn.delete .img {
+.btn.btn_delete .btn_delete-image {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-.btn.delete .img:hover {
+.btn.btn_delete .btn_delete-image:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
-.todo-list#completed-tasks .label {
+.todo-list.todo-list_completed .todo-item__label {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-.todo-list .todo-item .input-text {
+.todo-list .todo-item .todo-item__text {
   display: none;
 }
 
-.todo-list .todo-item.edit-mode .input-text {
+.todo-list .todo-item.todo-item_edit .todo-item__text {
   display: inline-block;
   width: 224px;
 }
 
-.todo-list .todo-item.edit-mode .label {
+.todo-list .todo-item.todo-item_edit .todo-item__label {
   display: none;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
 }
