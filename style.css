@@ -48,11 +48,13 @@
   padding: 0px;
 }
 
-.todo-item, .title {
+.todo-item,
+.title {
   list-style: none;
 }
 
-.input,.btn{
+.input,
+.btn {
   outline: none;
 }
 
@@ -135,7 +137,7 @@
   width: 226px;
 }
 
-.todo-item >    .input-text {
+.todo-item > .input-text {
   width: 226px;
 }
 
